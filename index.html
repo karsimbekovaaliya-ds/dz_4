@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Доска объявлений</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar"><h1>Доска объявлений</h1></header>
+
+  <main class="layout">
+    <aside class="panel">
+      <h2>Подать объявление</h2>
+      <form id="ad-form">
+        <label for="title">Заголовок</label>
+        <input id="title" type="text" maxlength="100">
+
+        <label for="description">Описание</label>
+        <textarea id="description" rows="4"></textarea>
+
+        <label for="price">Цена</label>
+        <input id="price" type="number" min="0" step="any">
+
+        <label for="image">Изображение</label>
+        <input id="image" type="file" accept="image/*">
+        <img id="preview" class="preview" alt="Предпросмотр" hidden>
+
+        <button id="submit-btn" class="btn-primary" type="submit">Отправить</button>
+        <p id="form-status" class="status"></p>
+      </form>
+    </aside>
+
+    <section class="content">
+      <h2>Объявления <span id="total" class="muted"></span></h2>
+      <button id="refresh-btn" class="btn-outline" type="button">Обновить</button>
+      <input id="search" class="search" type="search" placeholder="Поиск по заголовку и описанию">
+      <p id="list-status" class="status"></p>
+
+      <div id="ads" class="grid"></div>
+
+      <nav class="pager">
+        <button id="prev-btn" class="btn-outline" type="button">Назад</button>
+        <span id="page-info" class="muted"></span>
+        <button id="next-btn" class="btn-outline" type="button">Вперёд</button>
+      </nav>
+    </section>
+  </main>
+
+  <script src="main.js"></script>
+</body>
+</html>
